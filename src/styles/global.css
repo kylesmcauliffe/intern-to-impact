@@ -1,0 +1,136 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "tailwind-scrollbar-hide";
+@layer utilities {
+  .transition-max-w {
+    transition: max-width 0.5s ease-in-out;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Keyframes */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes rightMarquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes vertical {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  /* Animation Utility Classes */
+  .animate-marquee {
+    animation: var(--animate-marquee);
+  }
+
+  .animate-rightMarquee {
+    animation: var(--animate-rightMarquee);
+  }
+
+  .animate-slowMarquee {
+    animation: var(--animate-slowMarquee);
+  }
+
+  .animate-verticalMarquee {
+    animation: var(--animate-verticalMarquee);
+  }
+}
+@theme {
+  /* Typography */
+  --font-sans: "Geist", sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+
+  /* base Shades — warm espresso neutrals */
+  --color-base-50: oklch(0.975 0.008 85);
+  --color-base-100: oklch(0.955 0.012 80);
+  --color-base-200: oklch(0.905 0.018 75);
+  --color-base-300: oklch(0.82 0.025 70);
+  --color-base-400: oklch(0.7 0.035 65);
+  --color-base-500: oklch(0.58 0.04 60);
+  --color-base-600: oklch(0.48 0.038 58);
+  --color-base-700: oklch(0.38 0.032 55);
+  --color-base-800: oklch(0.3 0.028 52);
+  --color-base-900: oklch(0.22 0.02 50);
+  --color-base-950: oklch(0.16 0.015 48);
+
+  /* accent Shades — camel / tan */
+  --color-accent-50: oklch(0.97 0.015 85);
+  --color-accent-100: oklch(0.93 0.025 80);
+  --color-accent-200: oklch(0.87 0.04 78);
+  --color-accent-300: oklch(0.8 0.06 76);
+  --color-accent-400: oklch(0.74 0.075 74);
+  --color-accent-500: oklch(0.68 0.085 72);
+  --color-accent-600: oklch(0.6 0.09 68);
+  --color-accent-700: oklch(0.5 0.08 65);
+  --color-accent-800: oklch(0.4 0.065 60);
+  --color-accent-900: oklch(0.32 0.05 58);
+  --color-accent-950: oklch(0.24 0.04 55);
+
+  /* Yellow Shades — champagne gold */
+  --color-yellow-50: oklch(0.975 0.012 85);
+  --color-yellow-100: oklch(0.94 0.028 82);
+  --color-yellow-200: oklch(0.89 0.045 80);
+  --color-yellow-300: oklch(0.83 0.06 78);
+  --color-yellow-400: oklch(0.77 0.075 76);
+  --color-yellow-500: oklch(0.72 0.085 74);
+  --color-yellow-600: oklch(0.64 0.09 70);
+  --color-yellow-700: oklch(0.55 0.085 68);
+  --color-yellow-800: oklch(0.46 0.075 65);
+  --color-yellow-900: oklch(0.38 0.065 62);
+  --color-yellow-950: oklch(0.28 0.05 60);
+
+  /* Pink Shades — warm blush */
+  --color-pink-50: oklch(0.975 0.01 25);
+  --color-pink-100: oklch(0.95 0.018 22);
+  --color-pink-200: oklch(0.91 0.03 20);
+  --color-pink-300: oklch(0.85 0.045 18);
+  --color-pink-400: oklch(0.78 0.06 16);
+  --color-pink-500: oklch(0.7 0.07 14);
+  --color-pink-600: oklch(0.62 0.075 12);
+  --color-pink-700: oklch(0.54 0.07 10);
+  --color-pink-800: oklch(0.46 0.06 8);
+  --color-pink-900: oklch(0.4 0.05 6);
+  --color-pink-950: oklch(0.3 0.04 4);
+
+  /* Animation Variables */
+  --animate-marquee: marquee 12s linear infinite;
+  --animate-rightMarquee: rightMarquee 300s linear infinite;
+  --animate-slowMarquee: marquee 300s linear infinite;
+  --animate-verticalMarquee: vertical 30s linear infinite;
+}
+
+:root {
+  /* Style code blocks */
+  --astro-code-color-text: var(--color-accent-800);
+  --astro-code-background: var(--color-accent-50);
+  --astro-code-token-constant: var(--color-yellow-500);
+  --astro-code-token-string: var(--color-accent-600);
+  --astro-code-token-comment: var(--color-accent-300);
+  --astro-code-token-keyword: var(--color-yellow-400);
+  --astro-code-token-parameter: var(--color-base-600);
+  --astro-code-token-function: var(--color-accent-500);
+  --astro-code-token-string-expression: var(--color-accent-600);
+  --astro-code-token-punctuation: var(--color-accent-200);
+  --astro-code-token-link: var(--color-base-300);
+}

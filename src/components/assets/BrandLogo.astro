@@ -1,0 +1,13 @@
+---
+const { className = "", ...rest } = Astro.props;
+---
+
+<span
+  class:list={[
+    "font-display font-semibold tracking-tight text-accent-700",
+    className,
+  ]}
+  {...rest}
+>
+  Intern to Impact
+</span>

@@ -1,0 +1,45 @@
+---
+// Assets
+import BrandLogo from "@/components/assets/BrandLogo.astro";
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+const links = [
+  { name: "Contact", link: "/contact" },
+  { name: "Blog", link: "/blog" },
+  { name: "About", link: "/legal/about" },
+];
+---
+
+<section class="bg-accent-50 overflow-hidden relative">
+  <Wrapper variant="standard" class="py-24">
+    <div class="max-w-sm">
+      <Text
+        tag="h2"
+        variant="displayXL"
+        class="tracking-tighter text-accent-800 text-balance"
+      >
+        Intern to Impact
+      </Text>
+      <Text tag="p" variant="textBase" class="mt-4 text-accent-600">
+        Demure, deliberate career strategy for women who want to show up polished
+        — without performing.
+      </Text>
+      <ul role="list" class="flex flex-wrap gap-2 max-w-xl w-full mt-12">
+        {
+          links.map((item) => (
+            <li>
+              <a
+                class="text-accent-500 text-xl hover:text-accent-700 duration-300"
+                href={item.link}
+              >
+                {item.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <BrandLogo class="mt-16 text-2xl text-accent-400" />
+  </Wrapper>
+</section>

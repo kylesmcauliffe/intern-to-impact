@@ -1,0 +1,19 @@
+{
+  "name": "Intern to Impact",
+  "short_name": "Intern to Impact",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FAF7F0",
+  "background_color": "#FAF7F0",
+  "display": "standalone"
+}
