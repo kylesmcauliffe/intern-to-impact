@@ -7,7 +7,8 @@ Career blog and resources by Ariana — from intern to impact. Built with Astro.
 After Netlify is connected:
 
 - **Production:** `https://intern-to-impact.netlify.app` (update when custom domain is set)
-- **Preview:** push to `develop` → `https://develop--intern-to-impact.netlify.app`
+- **Preview (staging):** push to `develop` → `https://develop--intern-to-impact.netlify.app`
+- **Preview (experiments):** push to `lab` → `https://lab--intern-to-impact.netlify.app`
 
 Update `site` in `astro.config.mjs` with the real production URL for RSS/sitemap.
 
@@ -43,10 +44,11 @@ Use a GitHub Personal Access Token as the password (not your GitHub account pass
 | Branch | Role |
 |--------|------|
 | `original` | Frozen Lexington + first branding — never delete |
+| `lab` | Experiments — Netlify preview only |
 | `develop` | Staging — Netlify preview for Ari |
 | `main` | Production live site |
 
-Workflow: work on `develop` → Ari approves → merge to `main`. See `CONTRIBUTING.md`.
+Workflow: `lab` for experiments → merge to `develop` when ready → Ari approves → merge to `main`. See `CONTRIBUTING.md`.
 
 ## Netlify setup (Artometrics Pro)
 
