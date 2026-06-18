@@ -1,24 +1,16 @@
 ---
-// Sections
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Hero from "@/components/landing/Hero.astro";
-import LogoCloud1 from "@/components/global/LogoCloud1.astro";
-import Services from "@/components/landing/Services.astro";
-import Awwards from "@/components/global/Awwards.astro";
-import Work from "@/components/landing/Work.astro";
-import Why from "@/components/landing/Why.astro";
-import Testimonials from "@/components/landing/Testimonials.astro";
-import CtaHire from "@/components/ctas/CtaHire.astro";
+import StartHere from "@/components/landing/StartHere.astro";
 import BlogPreview from "@/components/landing/BlogPreview.astro";
+import AboutStrip from "@/components/landing/AboutStrip.astro";
 ---
+
 <BaseLayout>
   <Hero />
-  <LogoCloud1 />
-  <Services />
-  <Awwards />
-  <Work />
-  <Why />
-  <Testimonials />
-  <CtaHire />
+  <div id="start-here">
+    <StartHere />
+  </div>
   <BlogPreview />
+  <AboutStrip />
 </BaseLayout>

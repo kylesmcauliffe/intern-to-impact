@@ -1,0 +1,28 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<section class="bg-base-100 overflow-hidden border-t border-base-200">
+  <Wrapper variant="standard" class="py-16">
+    <div class="max-w-2xl">
+      <Text tag="h2" variant="displayMD" class="tracking-tight text-base-900">
+        About Ariana
+      </Text>
+      <Text tag="p" variant="textBase" class="text-base-600 mt-6 text-pretty">
+        Bay Area born and raised. First-gen college graduate from San Francisco
+        State. I applied to over 100 internships, led campus orgs, and landed at
+        Uber — now in sales at a tech company. This site is what I wish I could
+        hand my younger cousin before senior year: the templates, the reps, and
+        the honest story.
+      </Text>
+      <div class="mt-8">
+        <Button isLink size="base" variant="muted" href="/about">
+          Read more
+        </Button>
+      </div>
+    </div>
+  </Wrapper>
+</section>

@@ -5,41 +5,32 @@ import BrandLogo from "@/components/assets/BrandLogo.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 const links = [
-  { name: "Contact", link: "/contact" },
   { name: "Blog", link: "/blog" },
-  { name: "About", link: "/legal/about" },
+  { name: "Guides", link: "/blog/tags/guide" },
+  { name: "About", link: "/about" },
+  { name: "Contact", link: "/contact" },
 ];
 ---
 
-<section class="bg-accent-50 overflow-hidden relative">
-  <Wrapper variant="standard" class="py-24">
-    <div class="max-w-sm">
-      <Text
-        tag="h2"
-        variant="displayXL"
-        class="tracking-tighter text-accent-800 text-balance"
-      >
-        Intern to Impact
-      </Text>
-      <Text tag="p" variant="textBase" class="mt-4 text-accent-600">
-        Demure, deliberate career strategy for women who want to show up polished
-        — without performing.
-      </Text>
-      <ul role="list" class="flex flex-wrap gap-2 max-w-xl w-full mt-12">
-        {
-          links.map((item) => (
-            <li>
-              <a
-                class="text-accent-500 text-xl hover:text-accent-700 duration-300"
-                href={item.link}
-              >
-                {item.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-    <BrandLogo class="mt-16 text-2xl text-accent-400" />
+<section class="bg-white overflow-hidden border-t border-base-200">
+  <Wrapper variant="standard" class="py-16">
+    <BrandLogo showIcon class="text-base-900 text-lg" />
+    <Text tag="p" variant="textBase" class="mt-4 text-base-600 max-w-md">
+      Career guides for young professionals — from intern to impact.
+    </Text>
+    <ul role="list" class="flex flex-wrap gap-x-6 gap-y-2 mt-10">
+      {
+        links.map((item) => (
+          <li>
+            <a
+              class="text-base-600 hover:text-base-900 duration-200"
+              href={item.link}
+            >
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </Wrapper>
 </section>

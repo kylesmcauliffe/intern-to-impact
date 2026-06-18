@@ -1,0 +1,63 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+const cards = [
+  {
+    title: "Coffee chats",
+    description: "How to land 15-minute conversations and what to ask.",
+    href: "/blog/posts/coffee-chat",
+    pastel: "bg-pastel-lavender",
+  },
+  {
+    title: "LinkedIn outreach",
+    description: "Messages and follow-ups that got replies.",
+    href: "/blog/posts/linkedin-outreach",
+    pastel: "bg-pastel-blush",
+  },
+  {
+    title: "Internship tracker",
+    description: "How I tracked 100+ applications until Uber said yes.",
+    href: "/blog/posts/internship-tracker",
+    pastel: "bg-pastel-mint",
+  },
+];
+---
+
+<section class="bg-white overflow-hidden">
+  <Wrapper variant="standard" class="py-16">
+    <Text tag="h2" variant="displayMD" class="tracking-tight text-base-900">
+      Start here
+    </Text>
+    <Text tag="p" variant="textBase" class="text-base-500 mt-4 max-w-xl">
+      New to networking and internships? These three guides are the fastest path
+      through what I wish I had earlier.
+    </Text>
+    <div class="grid sm:grid-cols-3 gap-6 mt-12">
+      {
+        cards.map((card) => (
+          <a
+            href={card.href}
+            class:list={[
+              "group flex flex-col rounded-2xl p-6 transition-shadow hover:shadow-md",
+              card.pastel,
+            ]}
+          >
+            <Text
+              tag="h3"
+              variant="textLG"
+              class="font-semibold text-base-900 group-hover:text-base-700"
+            >
+              {card.title}
+            </Text>
+            <Text tag="p" variant="textSM" class="text-base-600 mt-2">
+              {card.description}
+            </Text>
+            <span class="mt-4 text-sm font-medium text-base-800">Read guide →</span>
+          </a>
+        ))
+      }
+    </div>
+  </Wrapper>
+</section>

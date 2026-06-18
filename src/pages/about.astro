@@ -1,0 +1,38 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<BaseLayout>
+  <section class="bg-white overflow-hidden">
+    <Wrapper variant="standard" class="py-16 lg:py-24 max-w-3xl">
+      <Text tag="h1" variant="displayLG" class="tracking-tight text-base-900">
+        About Ariana
+      </Text>
+      <div class="prose prose-base mt-8 text-base-600 max-w-none">
+        <p>
+          I'm Bay Area born and raised — first-gen college graduate from San
+          Francisco State. I didn't have parents who walked me through corporate
+          recruiting. I figured it out through hundreds of applications, campus
+          leadership, and a lot of trial and error.
+        </p>
+        <p>
+          I applied to over 100 internships from November through May. I tracked
+          everything in a spreadsheet, networked on LinkedIn, and eventually
+          landed at Uber. Today I'm in sales at a tech company — a path I
+          didn't predict, but one that fits.
+        </p>
+        <p>
+          <strong>Intern to Impact</strong> is the resource I wish existed for my
+          younger cousin, my Psi Chi team, and anyone at a state school who wants
+          corporate or tech but doesn't know where to start.
+        </p>
+        <p>
+          The advice here isn't universal law — it's what worked for me. Take
+          what helps, skip what doesn't, and build your own reps.
+        </p>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

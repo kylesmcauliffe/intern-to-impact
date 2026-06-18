@@ -1,53 +1,48 @@
 ---
-// Assets
-import { Image } from "astro:assets";
-import One from "@/images/assets/1.png";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Marquee
-export const tags = [
-  "career strategy",
-  "personal brand",
+const tags = [
+  "networking",
+  "internships",
   "LinkedIn",
-  "interview prep",
-  "executive presence",
+  "first-gen",
+  "Bay Area",
+  "career reps",
 ];
-const repeated = Array(20).fill(tags.join(" — ")).join(" — ");
+const repeated = Array(15).fill(tags.join(" · ")).join(" · ");
 ---
 
-<section class="bg-accent-50 overflow-hidden relative">
-  <Wrapper variant="standardWide" class="px-8 pb-0 py-12 lg:pt-24">
-    <div class="grid items-end gap-4 lg:grid-cols-3 max-w-5xl mx-auto">
+<section class="bg-white overflow-hidden border-b border-base-200">
+  <Wrapper variant="standardWide" class="px-8 py-16 lg:py-24">
+    <div class="grid items-end gap-6 lg:grid-cols-3 max-w-5xl mx-auto">
       <div class="lg:col-span-2">
         <Text
           tag="h1"
           variant="displayXL"
-          class="tracking-tighter text-accent-800 text-balance"
+          class="tracking-tight text-base-900 text-balance"
         >
           From intern to impact
         </Text>
       </div>
-      <Text tag="p" variant="textBase" class="font-medium text-accent-600">
-        Demure, deliberate career strategy for women who want to show up polished
-        — without performing.
+      <Text tag="p" variant="textBase" class="font-medium text-base-600">
+        Career guides for young professionals — especially if you're figuring it
+        out without a family playbook.
       </Text>
     </div>
-    <div class="relative mt-12">
-      <Image
-        width="1200"
-        height="630"
-        class="w-full max-h-[80vh] rounded-t-2xl relative object-cover object-top"
-        src={One}
-        alt="Intern to Impact"
-      />
+    <div class="flex flex-wrap gap-3 mt-10 max-w-5xl mx-auto">
+      <Button isLink size="base" variant="default" href="#start-here">
+        Start here
+      </Button>
+      <Button isLink size="base" variant="muted" href="/blog">
+        Read the blog
+      </Button>
     </div>
     <div
-      class="bg-accent-100 text-accent-700 font-medium relative rounded-b-2xl z-10 py-2 px-4 bottom-0 w-full overflow-x-hidden"
+      class="bg-base-100 text-base-500 text-sm font-medium rounded-2xl mt-12 py-3 px-4 overflow-x-hidden"
     >
-      <div class="items-center relative animate-marquee flex whitespace-nowrap">
-        {repeated}
-      </div>
+      <div class="animate-marquee flex whitespace-nowrap">{repeated}</div>
     </div>
   </Wrapper>
 </section>
