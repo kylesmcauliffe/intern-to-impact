@@ -4,13 +4,9 @@ Career blog and resources by Ariana — from intern to impact. Built with Astro.
 
 ## Live site
 
-After Netlify is connected:
-
-- **Production:** `https://intern-to-impact.netlify.app` (update when custom domain is set)
-- **Preview (staging):** push to `develop` → `https://develop--intern-to-impact.netlify.app`
-- **Preview (experiments):** push to `lab` → `https://lab--intern-to-impact.netlify.app`
-
-Update `site` in `astro.config.mjs` with the real production URL for RSS/sitemap.
+- **Production:** https://intern-to-impact.netlify.app
+- **Staging (Ari):** https://develop--intern-to-impact.netlify.app
+- **Experiments:** https://lab--intern-to-impact.netlify.app
 
 ## Requirements
 
@@ -26,40 +22,22 @@ Update `site` in `astro.config.mjs` with the real production URL for RSS/sitemap
 | `npm run build` | Production build → `dist/` |
 | `npm run preview` | Preview production build |
 
-## GitHub push (first time)
-
-Repo must be pushed before Netlify can import. Push all three branches:
-
-```bash
-cd /Users/ksm/Desktop/ari/intern-to-impact
-git push -u origin main
-git push -u origin develop
-git push -u origin original
-```
-
-Use a GitHub Personal Access Token as the password (not your GitHub account password).
-
 ## Branches
 
 | Branch | Role |
 |--------|------|
-| `original` | Frozen Lexington + first branding — never delete |
-| `lab` | Experiments — Netlify preview only |
-| `develop` | Staging — Netlify preview for Ari |
-| `main` | Production live site |
+| `original` | Frozen Lexington archive — never delete |
+| `lab` | **Edit here** — experiments and daily work |
+| `develop` | Staging — merge from `lab`, Ari reviews |
+| `main` | Production — merge from `develop` only |
 
-Workflow: `lab` for experiments → merge to `develop` when ready → Ari approves → merge to `main`. See `CONTRIBUTING.md`.
+**Flow:** `lab` → `develop` → `main`. See `CONTRIBUTING.md`.
 
-## Netlify setup (Artometrics Pro)
+## Netlify (Artometrics)
 
-1. [Netlify](https://app.netlify.com) → **Add new site** → **Import from Git**
-2. Choose **GitHub** → `kylesmcauliffe/intern-to-impact`
-3. Build settings: use `netlify.toml` (command `npm run build`, publish `dist`)
-4. **Production branch:** `main`
-5. **Branch deploys:** enable for `develop` (not `original`)
-6. Copy the production URL → update `astro.config.mjs` `site:`
-
-Every push to `main` or `develop` triggers a deploy automatically.
+- Production branch: `main`
+- Branch deploys: `lab`, `develop` (or All)
+- Build: `netlify.toml` (`npm run build`, publish `dist`, Node 22)
 
 ## Project layout
 
@@ -70,8 +48,8 @@ Every push to `main` or `develop` triggers a deploy automatically.
 | `docs/BRAND.md` | Colors, fonts, voice |
 | `public/` | Favicon and static assets |
 
-Drafts for Ari to review live outside the repo: `/Users/ksm/Desktop/ari/content-drafts/`
+Drafts outside repo: `/Users/ksm/Desktop/ari/content-drafts/`
 
 ## Theme
 
-Based on Outkast (Lexington Themes) Astro template, customized for Intern to Impact. See `docs/BRAND.md`.
+Outkast (Lexington Themes) customized for Intern to Impact. See `docs/BRAND.md`.

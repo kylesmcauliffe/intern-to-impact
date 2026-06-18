@@ -3,34 +3,53 @@
 ## Branch hierarchy
 
 ```
-original  → frozen baseline (Lexington + first branding) — do not delete
-lab       → experiments — wild ideas, never merge without review
-develop   → daily work + Ari preview on Netlify
+original  → frozen archive (Lexington + first branding) — never delete, never merge from
+lab       → experiments and active editing
+develop   → staging — Ari reviews here
 main      → production live site
 ```
 
-| Branch | Purpose | Netlify | Who merges |
-|--------|---------|---------|------------|
-| `original` | Archive — initial template state | Optional (ignore) | Nobody |
-| `lab` | Experiments only | Preview URL | Kyle only |
-| `develop` | Staging / review | Preview URL | Kyle pushes |
-| `main` | Production | Live site | Kyle after Ari approves |
+| Branch | Purpose | Netlify | Merge direction |
+|--------|---------|---------|-----------------|
+| `original` | Archive only | Ignore | — |
+| `lab` | Experiments + day-to-day edits | `lab--intern-to-impact.netlify.app` | → `develop` |
+| `develop` | Staging / Ari review | `develop--intern-to-impact.netlify.app` | → `main` |
+| `main` | Production | `intern-to-impact.netlify.app` | — |
+
+**Never merge directly:** `lab` → `main`, or anything → `original`.
 
 ## Workflow
 
-**Normal changes (Ari review):**
+### 1. Edit on `lab`
 
-1. Check out `develop` and make changes.
-2. `git push origin develop` → Netlify builds preview.
-3. Share `develop--intern-to-impact.netlify.app` with Ari.
-4. Ari reviews using `/Users/ksm/Desktop/ari/REVIEW.md`.
-5. Merge `develop` → `main` when approved → production updates.
+```bash
+git checkout lab
+git add .
+git commit -m "describe change"
+git push origin lab
+```
 
-**Experiments:**
+Preview: https://lab--intern-to-impact.netlify.app
 
-1. Check out `lab` (or branch off `lab`).
-2. Push → `lab--intern-to-impact.netlify.app`
-3. If something works, cherry-pick or merge `lab` → `develop` — never `lab` → `main` directly.
+### 2. Ready for Ari → merge to `develop`
+
+```bash
+git checkout develop
+git merge lab
+git push origin develop
+```
+
+Share https://develop--intern-to-impact.netlify.app and `/Users/ksm/Desktop/ari/REVIEW.md`.
+
+### 3. Ari approves → merge to `main`
+
+```bash
+git checkout main
+git merge develop
+git push origin main
+```
+
+Production updates automatically.
 
 ## Ari’s feedback
 
@@ -58,6 +77,5 @@ Open http://localhost:4321
 
 ```bash
 git checkout original
-# or inspect without switching:
 git show original:src/pages/index.astro
 ```
